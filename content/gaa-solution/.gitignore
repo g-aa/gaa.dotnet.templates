@@ -1,0 +1,26 @@
+## Ignore temporary files, build results, and folders.
+
+# not indexed
+bin
+obj
+packages
+node_modules
+results
+coverage
+TestResults
+StyleCop.Cache
+_ReSharper.Caches
+_TeamCity.*
+*.user
+*.suo
+*.~*
+.*
+
+# indexed
+!.editorconfig
+!.gitignore
+!.version
+!.dockerignore
+!.gitlab-ci.yml
+!.overrides-ci.yml
+!.test.bat
