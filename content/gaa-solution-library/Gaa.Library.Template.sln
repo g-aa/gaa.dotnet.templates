@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{126ABD15-E8CF-4814-A97C-A81A0F67FBD9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		.test.bat = .test.bat
+		.version = .version
+		CHANGELOG.md = CHANGELOG.md
+		coverlet.runsettings = coverlet.runsettings
+		Directory.Build.props = Directory.Build.props
+		icon.png = icon.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F81715D0-A05A-47BA-84E2-4F41E9DE63FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E52491F4-0BC7-43AB-8175-3E34A8CD2A60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaa.Library", "src\Gaa.Library\Gaa.Library.csproj", "{119227E6-7325-4AEB-96E7-438E0D08223D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaa.Library.Test", "test\Gaa.Library.Test\Gaa.Library.Test.csproj", "{CC56943D-7D0C-43E2-B07A-99638A332DDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{119227E6-7325-4AEB-96E7-438E0D08223D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119227E6-7325-4AEB-96E7-438E0D08223D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119227E6-7325-4AEB-96E7-438E0D08223D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119227E6-7325-4AEB-96E7-438E0D08223D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC56943D-7D0C-43E2-B07A-99638A332DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC56943D-7D0C-43E2-B07A-99638A332DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC56943D-7D0C-43E2-B07A-99638A332DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC56943D-7D0C-43E2-B07A-99638A332DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{119227E6-7325-4AEB-96E7-438E0D08223D} = {F81715D0-A05A-47BA-84E2-4F41E9DE63FE}
+		{CC56943D-7D0C-43E2-B07A-99638A332DDA} = {E52491F4-0BC7-43AB-8175-3E34A8CD2A60}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75145E2F-CEAF-495C-953B-CDBC53F7CFF4}
+	EndGlobalSection
+EndGlobal
