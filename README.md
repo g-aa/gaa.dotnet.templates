@@ -1,4 +1,4 @@
-# <p><img src="icon.png" width="64px" height="64px" align="middle"/> Gaa dotnet templates</p>
+# <p><img src="icon.png" width="64px" height="64px" align="middle"/> GAA dotnet templates</p>
 
 .Net шаблоны для личных проектов. 
 
