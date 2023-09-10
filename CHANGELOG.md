@@ -6,16 +6,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 
 ## [Unreleased]
 
-## [1.0.0] - 2022-12-20
+## [1.1.0] - 2023-09-10
+
 ### Добавлено
-- MT-0012: Добавление шаблона проекта 'Mt-Relay: Empty Solution';
-- MT-0012: Добавление шаблона проекта 'Mt-Relay: Library Solution';
+
+- Добавление шаблона `Gaa: Library Test`.
 
 ### Изменено
-- -//-
+
+- Обновление структуры и файлов проекта `Gaa.DotNet.Templates.csproj`.
 
 ### Удалено
-- -//-
 
-[Unreleased]: https://github.com/g-aa/mt-dotnet-templates/tree/develop
-[1.0.0]: https://github.com/g-aa/mt-dotnet-templates/tree/main
+- Добавление шаблона `Gaa: Library Solution`.
+
+## [1.0.0] - 2023-05-01
+
+### Добавлено
+
+- Добавление шаблона `Gaa: Empty Solution`;
+- Добавление шаблона `Gaa: Library Solution`.
+
+[Unreleased]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.1.0...main
+[1.1.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.0.0...release-v1.1.0
+[1.0.0]: https://github.com/g-aa/gaa-dotnet-templates/releases/tag/release-v1.0.0

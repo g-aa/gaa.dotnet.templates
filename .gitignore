@@ -11,16 +11,17 @@ TestResults
 StyleCop.Cache
 _ReSharper.Caches
 _TeamCity.*
+*.nupkg
 *.user
 *.suo
 *.~*
 .*
+
 
 # indexed
 !.editorconfig
 !.gitignore
 !.version
 !.dockerignore
-!.gitlab-ci.yml
-!.overrides-ci.yml
 !.test.bat
+!.template.config

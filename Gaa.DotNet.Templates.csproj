@@ -8,32 +8,30 @@
     <PackageId>Gaa.DotNet.Templates</PackageId>
     <Description>Personal project templates.</Description>
     <PackageTags>GAA;Net;Templates;</PackageTags>
-
     <Authors>Andrey G.</Authors>
     <Company>None</Company>
-    <Copyright>Copyright 2023.</Copyright>    
+    <Copyright>Copyright 2023.</Copyright>
     <NeutralLanguage>ru-RU</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/g-aa/gaa-dotnet-templates</RepositoryUrl>
     <PackageProjectUrl>https://github.com/g-aa/gaa-dotnet-templates</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageVersion>1.0.0</PackageVersion>
-
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageVersion>1.1.0</PackageVersion>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <NoDefaultExcludes>true</NoDefaultExcludes>
   </PropertyGroup>
-
   <ItemGroup>
     <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
     <None Include="icon.png" Pack="true" PackagePath="\" />
+    <None Include="LICENSE.txt" Pack="true" PackagePath="\" Visible="true" />
   </ItemGroup>
 </Project>
