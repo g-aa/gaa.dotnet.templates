@@ -18,5 +18,4 @@ Templates                Short Name                       Language    Tags
 -------------------------------------------------------------------------------------------------
 Gaa: Empty Solution      gaa-sln,gaa-solution             [C#]        Common/Gaa/Solution
 Gaa: Library Test        gaa-lib-test,gaa-library-test    [C#]        Common/Gaa/Library/Test
-Gaa: Library Solution    gaa-lib,gaa-library              [C#]        Common/Gaa/Solution/Library
 ```
