@@ -8,8 +8,9 @@
 
 ## Команды по работе с пакетом шаблонов
 
-- Установка пакета с шаблонами: `dotnet new install Gaa.DotNet.Templates`
-- Просмотр перечня шаблонов: `dotnet new list`
+- Просмотр актуального перечня шаблонов: `dotnet new list`
+- Установка пакета с шаблонами (пример): `dotnet new install Gaa.DotNet.Templates.1.0.0.nupkg`
+- Удаление пакета с шаблонами (пример):  `dotnet new uninstall Gaa.DotNet.Templates.1.0.0.nupkg`
 
 ## Список доступных шаблонов
 
