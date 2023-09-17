@@ -10,7 +10,6 @@
   "name": "Gaa: Project Service",
   "generatorVersions": "[1.0.0.0-*)",
   "description": "Create a template web service project for personal projects.",
-  "groupIdentity": "GaaProject",
   "identity": "Gaa.Project.Service",
   "shortName": [
     "gaa-proj-service",
