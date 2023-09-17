@@ -4,20 +4,20 @@
   "classifications": [
     "Common",
     "Gaa",
-    "Library",
+    "Project",
     "Test"
   ],
-  "name": "Gaa: Library Test",
+  "name": "Gaa: Project Test",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "Create a template test library for personal projects.",
-  "groupIdentity": "GaaLibrary",
-  "identity": "Gaa.Library.Test",
+  "description": "Create a template test project for personal projects.",
+  "groupIdentity": "GaaProject",
+  "identity": "Gaa.Project.Test",
   "shortName": [
-    "gaa-lib-test",
-    "gaa-library-test"
+    "gaa-proj-test",
+    "gaa-project-test"
   ],
-  "sourceName": "Gaa.Library.Test",
-  "defaultName": "Gaa.Library.Test1",
+  "sourceName": "Gaa.Project.Test",
+  "defaultName": "Gaa.Project.Test1",
   "tags": {
     "language": "C#",
     "type": "project"

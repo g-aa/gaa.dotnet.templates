@@ -1,10 +1,10 @@
-namespace Gaa.Library.Test;
+namespace Gaa.Project.Test;
 
 /// <summary>
 /// Набор тестов для <see cref="string"/>.
 /// </summary>
 [TestFixture]
-public class TestExample
+public class TestSample
 {
     private string example;
 
