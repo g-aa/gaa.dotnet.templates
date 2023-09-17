@@ -15,8 +15,9 @@
 ## Список доступных шаблонов
 
 ```
-Templates                Short Name                       Language    Tags
--------------------------------------------------------------------------------------------------
-Gaa: Empty Solution      gaa-sln,gaa-solution             [C#]        Common/Gaa/Solution
-Gaa: Library Test        gaa-lib-test,gaa-library-test    [C#]        Common/Gaa/Library/Test
+Templates               Short Name                              Language    Tags
+------------------------------------------------------------------------------------------------------
+Gaa: Empty Solution     gaa-sln,gaa-solution                    [C#]        Common/Gaa/Solution
+Gaa: Project Test       gaa-proj-test,gaa-project-test          [C#]        Common/Gaa/Project/Test
+Gaa: Project Service    gaa-proj-service,gaa-project-service    [C#]        Common/Gaa/Project/Service
 ```

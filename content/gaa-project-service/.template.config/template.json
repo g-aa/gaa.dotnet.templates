@@ -5,18 +5,18 @@
     "Common",
     "Gaa",
     "Project",
-    "Test"
+    "Service"
   ],
-  "name": "Gaa: Project Test",
+  "name": "Gaa: Project Service",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "Create a template test project for personal projects.",
-  "identity": "Gaa.Project.Test",
+  "description": "Create a template web service project for personal projects.",
+  "identity": "Gaa.Project.Service",
   "shortName": [
-    "gaa-proj-test",
-    "gaa-project-test"
+    "gaa-proj-service",
+    "gaa-project-service"
   ],
-  "sourceName": "Gaa.Project.Test",
-  "defaultName": "Gaa.Project.Test1",
+  "sourceName": "Gaa.Project.Service",
+  "defaultName": "Gaa.Project.Service1",
   "tags": {
     "language": "C#",
     "type": "project"
