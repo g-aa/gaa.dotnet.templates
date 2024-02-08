@@ -23,4 +23,4 @@ _TeamCity.*
 !.version
 !.dockerignore
 !.test.bat
-!.template.config
+!.test.sh
