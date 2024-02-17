@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{B4E2D74B-EEAB-40CE-8C67-A12050DCFCD5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		icon.png = icon.png
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84CDCB03-2819-44AB-898B-1FD03D4FAF26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{777F29E2-32F1-405C-8BB5-8653795D5D56}"
+	ProjectSection(SolutionItems) = preProject
+		images\braces-1-512x512.png = images\braces-1-512x512.png
+		images\braces-2-512x512.png = images\braces-2-512x512.png
+		images\brackets-512x512.png = images\brackets-512x512.png
+		images\dll-512x512.png = images\dll-512x512.png
+		images\layers-512x512.png = images\layers-512x512.png
+		images\letter-G-512x512.png = images\letter-G-512x512.png
+		images\letter-L-512x512.png = images\letter-L-512x512.png
+		images\letter-S-512x512.png = images\letter-S-512x512.png
+		images\letter-T-512x512.png = images\letter-T-512x512.png
+		images\letter-W-512x512.png = images\letter-W-512x512.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaa.DotNet.Templates", "src\Gaa.DotNet.Templates\Gaa.DotNet.Templates.csproj", "{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7} = {84CDCB03-2819-44AB-898B-1FD03D4FAF26}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F9E0943-46F1-4B43-AAD8-88FB7AFA8A79}
+	EndGlobalSection
+EndGlobal
