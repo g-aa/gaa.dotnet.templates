@@ -24,3 +24,5 @@ _TeamCity.*
 !.dockerignore
 !.test.bat
 !.test.sh
+!.mr-develop-to-main.bat
+!.template.config
