@@ -1,6 +1,11 @@
-using Microsoft.OpenApi.Models;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
+
+using Asp.Versioning;
+using Asp.Versioning.ApiExplorer;
+
+using Microsoft.Extensions.Options;
+
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Gaa.Project.Service.Infrastructure;
 
@@ -11,51 +16,70 @@ namespace Gaa.Project.Service.Infrastructure;
 public static class SwaggerSupport
 {
     /// <summary>
-    /// Регистрация swagger UI в коллекции сервисов.
+    /// Регистрирует поддержку версий API в коллекцию сервисов.
     /// </summary>
     /// <param name="services">Коллекция сервисов.</param>
-    /// <param name="assemblies">Перечень сборок проекта.</param>
     /// <returns>Модифицированная коллекция сервисов.</returns>
-    public static IServiceCollection AddWebApiSwaggerDocumentation(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+    public static IServiceCollection AddApiVersioningSupport(this IServiceCollection services)
     {
-        services.AddSwaggerGen(options =>
-        {
-            options.SwaggerDoc("v1", new OpenApiInfo
+        return services
+            .AddApiVersioning(options =>
             {
-                Title = $"{Program.ServiceName} {Program.CurrentVersion}",
-                Version = "v1",
-                Description = $"Rest API для взаимодействия с функционалом {Program.ServiceName}.",
-            });
-
-            options.EnableAnnotations();
-            options.OperationFilter<SwaggerResponseOperationFilter>();
-
-            foreach (var assembly in assemblies)
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.ReportApiVersions = true;
+            })
+            .AddApiExplorer(options =>
             {
-                var xmlDocument = $"{assembly.GetName().Name}.xml";
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlDocument));
-            }
-
-            options.SchemaGeneratorOptions.SchemaIdSelector = (Type type) => type.Name;
-        });
-
-        return services;
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            })
+            .Services;
     }
 
     /// <summary>
-    /// Инициализация swagger UI.
+    /// Регистрирует swagger ui в коллекции сервисов.
+    /// </summary>
+    /// <param name="services">Коллекция сервисов.</param>
+    /// <returns>Модифицированная коллекция сервисов.</returns>
+    public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
+    {
+        return services
+            .AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerConfigureOptions>()
+            .AddSwaggerGen(options =>
+            {
+                options.EnableAnnotations();
+                options.OperationFilter<SwaggerResponseOperationFilter>();
+
+                var xmlDocumentation = $"{typeof(ServiceLayer).Assembly.GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlDocumentation));
+
+                options.SchemaGeneratorOptions.SchemaIdSelector = (Type type) => type.Name;
+            });
+    }
+
+    /// <summary>
+    /// Инициализирует swagger ui.
     /// </summary>
     /// <param name="builder">Строитель приложения.</param>
     /// <returns>Модифицированный строитель приложения.</returns>
     public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder builder)
     {
-        builder.UseSwagger();
-        builder.UseSwaggerUI(options =>
-        {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", $"{Program.ServiceName} API v1");
-            options.DisplayRequestDuration();
-        });
+        var apiVersionProvider = builder.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
+        return builder
+            .UseSwagger(options =>
+            {
+                options.RouteTemplate = "swagger/{documentName}/service.{json|yaml}";
+            })
+            .UseSwaggerUI(uiOptions =>
+            {
+                foreach (var groupName in apiVersionProvider.ApiVersionDescriptions.Select(e => e.GroupName))
+                {
+                    uiOptions.SwaggerEndpoint($"/swagger/{groupName}/service.yaml", $"REST API {groupName}");
+                }
 
-        return builder;
+                uiOptions.DisplayRequestDuration();
+                uiOptions.DefaultModelsExpandDepth(0);
+            });
     }
 }

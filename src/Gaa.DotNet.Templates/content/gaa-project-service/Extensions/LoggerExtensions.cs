@@ -8,9 +8,9 @@ namespace Gaa.Project.Service.Extensions;
 public static class LoggerExtensions
 {
     /// <summary>
-    /// Добавить компоненты <see cref="ServiceUser"/> к <see cref="ILogger"/>.
+    /// Добавляет компоненты <see cref="ServiceUser"/> к <see cref="ILogger"/>.
     /// </summary>
-    /// <typeparam name="TLogger"></typeparam>
+    /// <typeparam name="TLogger">Тип журнала логирования.</typeparam>
     /// <param name="logger">Журнал логирования.</param>
     /// <param name="user">Пользователь сервиса.</param>
     /// <returns><see cref="IDisposable"/> используемый для освобождения ресурсов.</returns>
@@ -19,7 +19,7 @@ public static class LoggerExtensions
     {
         return logger.BeginScope(new[]
         {
-            new KeyValuePair<string, object>("Service-user", user.Name),
+            new KeyValuePair<string, object>("service-user", user.Name),
         });
     }
 }

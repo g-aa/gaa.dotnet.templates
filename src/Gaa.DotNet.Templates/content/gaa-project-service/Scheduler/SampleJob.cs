@@ -1,6 +1,6 @@
 using Quartz;
 
-namespace Gaa.Project.Service.Jobs;
+namespace Gaa.Project.Service.Scheduler;
 
 /// <summary>
 /// Пример фоновой задачи.
@@ -25,7 +25,7 @@ public sealed class SampleJob : IJob
     /// <inheritdoc/>
     public Task Execute(IJobExecutionContext context)
     {
-        _logger.LogWarning("Сообщение из фонового задания '{0}'.", Key.Name);
+        _logger.LogWarning("Сообщение из фонового задания '{Name}'.", Key.Name);
         return Task.CompletedTask;
     }
 }

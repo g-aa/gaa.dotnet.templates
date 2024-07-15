@@ -1,9 +1,13 @@
-using Gaa.Project.Service.Extensions;
-using Gaa.Project.Service.Security;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using System.Data.Common;
 using System.Diagnostics.CodeAnalysis;
+
+using FluentValidation;
+
+using Gaa.Project.Service.Extensions;
+using Gaa.Project.Service.Security;
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Gaa.Project.Service.Infrastructure;
 
@@ -13,35 +17,30 @@ namespace Gaa.Project.Service.Infrastructure;
 [ExcludeFromCodeCoverage]
 public sealed class ApiExceptionFilter : IExceptionFilter
 {
-    /// <summary>
-    /// Передавать детализацию об исключениях. 
-    /// </summary>
-    private readonly bool _passDetails;
-
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="ApiExceptionFilter"/>.
-    /// </summary>
-    public ApiExceptionFilter()
-    {
-        _passDetails = false;
-    }
-
     /// <inheritdoc />
     public void OnException(ExceptionContext context)
     {
         var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<ApiExceptionFilter>>();
         var user = context.HttpContext.RequestServices.GetRequiredService<ServiceUser>();
-        var exception = context.Exception;
 
         using var scope = logger.BeginWithServiceUserScope(user);
-        switch (exception)
+        switch (context.Exception)
         {
+            case ValidationException validationException:
+                logger.LogWarning(validationException, validationException.Message);
+                var errors = validationException.Errors
+                    .GroupBy(e => e.PropertyName)
+                    .ToDictionary(k => k.Key, v => v.Select(e => e.ErrorMessage).ToArray());
+                var validationError = new ValidationProblemDetails(errors);
+                context.Result = new BadRequestObjectResult(validationError);
+                break;
+
             case DbException dbException:
                 logger.LogError(dbException, dbException.Message);
                 var dbErrorDetails = new ProblemDetails
                 {
                     Status = StatusCodes.Status500InternalServerError,
-                    Detail = _passDetails ? exception.Message : "Database error.",
+                    Detail = "Database error.",
                 };
 
                 context.Result = new ObjectResult(dbErrorDetails)
@@ -51,11 +50,11 @@ public sealed class ApiExceptionFilter : IExceptionFilter
                 break;
 
             default:
-                logger.LogCritical(exception, exception.Message);
+                logger.LogCritical(context.Exception, context.Exception.Message);
                 var criticalDetails = new ProblemDetails
                 {
                     Status = StatusCodes.Status500InternalServerError,
-                    Detail = _passDetails ? exception.Message : "Internal server error.",
+                    Detail = "Internal server error.",
                 };
 
                 context.Result = new ObjectResult(criticalDetails)
