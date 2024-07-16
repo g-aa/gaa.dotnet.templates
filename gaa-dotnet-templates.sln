@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{777F29
 		images\braces-2-512x512.png = images\braces-2-512x512.png
 		images\brackets-512x512.png = images\brackets-512x512.png
 		images\dll-512x512.png = images\dll-512x512.png
+		images\git-512x512.png = images\git-512x512.png
 		images\git-commit-512x512.png = images\git-commit-512x512.png
 		images\git-merge-512x512.png = images\git-merge-512x512.png
 		images\layers-512x512.png = images\layers-512x512.png
