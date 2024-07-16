@@ -1,20 +1,26 @@
+using Asp.Versioning;
+
 using Gaa.Project.Service.Models;
+
 using MassTransit;
+
 using Microsoft.AspNetCore.Mvc;
+
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace Gaa.Project.Service.Controllers;
+namespace Gaa.Project.Service.Controllers.V1;
 
 /// <summary>
 /// Пример контроллер по отправке сообщений в очередь.
 /// </summary>
-[Route("api/sample")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/sample")]
 public sealed class SampleController : ControllerBase
 {
     private readonly IPublishEndpoint _endpoint;
 
     /// <summary>
-    /// Инициализация нового экземпляра класса <see cref="SampleController"/>.
+    /// Инициализирует новый экземпляр класса <see cref="SampleController"/>.
     /// </summary>
     /// <param name="endpoint">MassTransit publish endpoint.</param>
     public SampleController(IPublishEndpoint endpoint)
@@ -23,7 +29,7 @@ public sealed class SampleController : ControllerBase
     }
 
     /// <summary>
-    /// Отправить сообщение в очередь.
+    /// Отправляет сообщение в очередь.
     /// </summary>
     /// <returns>Результат работы асинхронной задачи.</returns>
     [HttpPost("message")]

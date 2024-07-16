@@ -21,6 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{777F29
 		images\braces-2-512x512.png = images\braces-2-512x512.png
 		images\brackets-512x512.png = images\brackets-512x512.png
 		images\dll-512x512.png = images\dll-512x512.png
+		images\git-512x512.png = images\git-512x512.png
+		images\git-commit-512x512.png = images\git-commit-512x512.png
+		images\git-merge-512x512.png = images\git-merge-512x512.png
 		images\layers-512x512.png = images\layers-512x512.png
 		images\letter-G-512x512.png = images\letter-G-512x512.png
 		images\letter-L-512x512.png = images\letter-L-512x512.png
@@ -29,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{777F29
 		images\letter-W-512x512.png = images\letter-W-512x512.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaa.DotNet.Templates", "src\Gaa.DotNet.Templates\Gaa.DotNet.Templates.csproj", "{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaa.DotNet.Templates", "src\Gaa.DotNet.Templates\Gaa.DotNet.Templates.csproj", "{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

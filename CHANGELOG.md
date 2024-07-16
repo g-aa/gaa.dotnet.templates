@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.4.0] - 2024-07-15
+
+### Изменено
+
+- Обновление репозитория.
+- Добавление шаблона `Gaa: Project Logic`.
+
 ## [1.3.0] - 2024-02-18
 
 ### Изменено
@@ -43,7 +50,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 - Добавление шаблона `Gaa: Empty Solution`;
 - Добавление шаблона `Gaa: Library Solution`.
 
-[Unreleased]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.3.0...main
+[Unreleased]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.4.0...main
+[1.4.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.3.0...release-v1.4.0
 [1.3.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.2.0...release-v1.3.0
 [1.2.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.1.0...release-v1.2.0
 [1.1.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.0.0...release-v1.1.0

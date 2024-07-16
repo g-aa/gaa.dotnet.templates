@@ -1,12 +1,15 @@
+using System.Diagnostics.CodeAnalysis;
+
 using Gaa.Project.Service.Consumers;
 using Gaa.Project.Service.Infrastructure;
-using Gaa.Project.Service.Jobs;
+using Gaa.Project.Service.Scheduler;
 using Gaa.Project.Service.Security;
+
 using MassTransit;
-using Quartz;
-using Quartz.AspNetCore;
-using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
+
+using OpenTelemetry.Exporter;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
 
 namespace Gaa.Project.Service;
 
@@ -20,38 +23,26 @@ public sealed class Startup
     public IConfiguration Configuration { get; init; }
 
     /// <summary>
-    /// Перечень сборок приложения.
-    /// </summary>
-    public IEnumerable<Assembly> Assemblies { get; init; }
-
-    /// <summary>
-    /// Инициализация экземпляра класса <see cref="Startup"/>.
+    /// Инициализирует новый экземпляр класса <see cref="Startup"/>.
     /// </summary>
     /// <param name="configuration">Набор свойств конфигурации приложения.</param>
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;
-        Assemblies = new Assembly[]
-        {
-            typeof(ServiceLayer).Assembly,
-        };
     }
 
     /// <summary>
-    /// Метод конфигурации сервисов приложения.
+    /// Конфигурирует сервисы приложения.
     /// </summary>
     /// <param name="services">Коллекция сервисов.</param>
     public void ConfigureServices(IServiceCollection services)
     {
-        #region [ Service configuration ]
-
-        #endregion
-
-        #region [ Infrastructure configuration ]
-
-        services.AddScoped<ServiceUser>();
-        services.AddHttpContextAccessor();
-        services.AddWebApiSwaggerDocumentation(Assemblies);
+        services
+            .AddScoped<ServiceUser>()
+            .AddHttpContextAccessor()
+            .AddApiVersioningSupport()
+            .AddSwaggerDocumentation()
+            .AddScheduler(Configuration);
 
         var uriBuilder = new UriBuilder(Configuration.GetConnectionString("RabbitMQ")!);
         services.AddMassTransit(configure =>
@@ -70,61 +61,40 @@ public sealed class Startup
             });
         });
 
-        services.AddQuartz(configure =>
-        {
-            configure.SchedulerId = $"{Program.ServiceName} Scheduler: '{Guid.NewGuid()}'";
-            configure.SchedulerName = $"{Program.ServiceName} Quartz.NET Scheduler";
+        services
+            .AddControllers(options => options.Filters.Add<ApiExceptionFilter>());
 
-            configure.AddJob<SampleJob>(
-                SampleJob.Key,
-                jobConfigurator => jobConfigurator.WithDescription("sample background job"));
+        services
+            .AddOpenTelemetry()
+            .WithMetrics(meterBuilder => meterBuilder
+                .AddRuntimeInstrumentation()
+                .AddAspNetCoreInstrumentation()
+                .AddPrometheusExporter());
 
-            configure.AddTrigger(triggerConfigurator => triggerConfigurator
-                .WithIdentity("cron trigger")
-                .ForJob(SampleJob.Key)
-                .WithCronSchedule("00 */2 * * * ?")
-                .WithDescription("cron trigger for sample background job"));
-        });
-
-        services.AddQuartzServer(options =>
-        {
-            options.WaitForJobsToComplete = true;
-        });
-
-        #endregion
-
-        services.AddControllers(configure =>
-        {
-            configure.Filters.Add<ApiExceptionFilter>();
-        });
-        services.AddEndpointsApiExplorer();
+        services
+            .Configure<PrometheusAspNetCoreOptions>(options => options.DisableTotalNameSuffixForCounters = true);
     }
 
     /// <summary>
-    /// Метод настройки конвейера HTTP-запросов.
+    /// Настраивает конвейер HTTP-запросов.
     /// </summary>
     /// <param name="builder">Строитель приложения.</param>
     /// <param name="environment">Окружение приложения.</param>
     public void Configure(IApplicationBuilder builder, IWebHostEnvironment environment)
     {
-        if (environment.IsDevelopment())
-        {
-            builder.UseDeveloperExceptionPage();
-        }
-
-        builder.UseRouting();
-        builder.UseAuthorization();
-
-        builder.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-            endpoints.MapGet("/", context =>
+        builder
+            .UseDiagnostics()
+            .UseRouting()
+            .UseAuthorization()
+            .UseEndpoints(endpoints =>
             {
-                context.Response.Redirect("/swagger");
-                return Task.CompletedTask;
-            });
-        });
-
-        builder.UseSwaggerDocumentation();
+                endpoints.MapControllers();
+                endpoints.MapGet("/", context =>
+                {
+                    context.Response.Redirect("/swagger");
+                    return Task.CompletedTask;
+                });
+            })
+            .UseSwaggerDocumentation();
     }
 }

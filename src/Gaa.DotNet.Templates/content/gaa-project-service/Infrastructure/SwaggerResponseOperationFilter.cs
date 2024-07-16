@@ -1,9 +1,12 @@
-using Gaa.Project.Service.Controllers;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+
+using Gaa.Project.Service.Controllers;
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
+
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Gaa.Project.Service.Infrastructure;
 
@@ -15,10 +18,11 @@ public sealed class SwaggerResponseOperationFilter : IOperationFilter
 {
     private static readonly IReadOnlyDictionary<int, string> ErrorStatuses = new Dictionary<int, string>
     {
-        { StatusCodes.Status400BadRequest, "Ошибка в логике приложения, ошибка валидации." },
+        { StatusCodes.Status400BadRequest, "Ошибка валидации." },
         { StatusCodes.Status401Unauthorized, "Пользователь не авторизован." },
-        { StatusCodes.Status403Forbidden, "Доступ к ресурсу запрещенный." },
-        { StatusCodes.Status422UnprocessableEntity, "Внутренняя ошибка сервера." },
+        { StatusCodes.Status403Forbidden, "Доступ к ресурсу запрещен." },
+        { StatusCodes.Status422UnprocessableEntity, "Ошибка в логике приложения." },
+        { StatusCodes.Status500InternalServerError, "Внутренняя ошибка сервера." },
     };
 
     /// <inheritdoc />
@@ -46,7 +50,11 @@ public sealed class SwaggerResponseOperationFilter : IOperationFilter
             var httpCode = status.Key.ToString(CultureInfo.InvariantCulture);
             if (!operation.Responses.ContainsKey(httpCode))
             {
-                operation.Responses.Add(httpCode, new OpenApiResponse { Content = content, Description = status.Value, });
+                operation.Responses.Add(httpCode, new OpenApiResponse
+                {
+                    Content = content,
+                    Description = status.Value,
+                });
             }
         }
     }

@@ -7,19 +7,14 @@
     <NeutralLanguage>ru-RU</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/g-aa</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/g-aa</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageIcon>icon.png</PackageIcon>
     <Build_Version Condition=" '$(Build_Version)' == '' ">$([System.IO.File]::ReadAllText($(MSBuildThisFileDirectory).version).Trim())</Build_Version>
     <Build_Number Condition=" '$(Build_Number)' == '' ">$(Build_Version).0</Build_Number>
     <Version>$(Build_Version)</Version>
-    <PackageVersion>$(Build_Version)</PackageVersion>
     <FileVersion>$(Build_Number)</FileVersion>
     <AssemblyVersion>$(Build_Number)</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.19.0.84025">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.28.0.94264">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
