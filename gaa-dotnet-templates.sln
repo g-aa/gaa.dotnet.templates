@@ -15,23 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{B4E2D74B-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84CDCB03-2819-44AB-898B-1FD03D4FAF26}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{777F29E2-32F1-405C-8BB5-8653795D5D56}"
-	ProjectSection(SolutionItems) = preProject
-		images\braces-1-512x512.png = images\braces-1-512x512.png
-		images\braces-2-512x512.png = images\braces-2-512x512.png
-		images\brackets-512x512.png = images\brackets-512x512.png
-		images\dll-512x512.png = images\dll-512x512.png
-		images\git-512x512.png = images\git-512x512.png
-		images\git-commit-512x512.png = images\git-commit-512x512.png
-		images\git-merge-512x512.png = images\git-merge-512x512.png
-		images\layers-512x512.png = images\layers-512x512.png
-		images\letter-G-512x512.png = images\letter-G-512x512.png
-		images\letter-L-512x512.png = images\letter-L-512x512.png
-		images\letter-S-512x512.png = images\letter-S-512x512.png
-		images\letter-T-512x512.png = images\letter-T-512x512.png
-		images\letter-W-512x512.png = images\letter-W-512x512.png
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gaa.DotNet.Templates", "src\Gaa.DotNet.Templates\Gaa.DotNet.Templates.csproj", "{57C6FAA3-DF57-413E-A809-FF6F6A5C44C7}"
 EndProject
 Global
