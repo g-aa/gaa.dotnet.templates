@@ -21,4 +21,5 @@ Gaa: Empty Solution     gaa-sln,gaa-solution                    [C#]        Comm
 Gaa: Project Test       gaa-proj-test,gaa-project-test          [C#]        Common/Gaa/Project/Test
 Gaa: Project Service    gaa-proj-service,gaa-project-service    [C#]        Common/Gaa/Project/Service
 Gaa: Project Logic      gaa-proj-logic,gaa-project-logic        [C#]        Common/Gaa/Project/Logic
+Gaa: Project Library    gaa-proj-library,gaa-project-library    [C#]        Common/Gaa/Project/Library
 ```

@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 ### Изменено
 
 - Обновление структуры и файлов проекта.
+- Добавление шаблона `Gaa: Project Library`.
 
 ## [1.4.1] - 2024-07-19
 
