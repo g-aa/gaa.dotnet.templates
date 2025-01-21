@@ -3,38 +3,35 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <IsPackable>true</IsPackable>
-    <PackageType>Template</PackageType>
+    <Description>Personal project templates.</Description>
+    <Product>Templates</Product>
     <Title>GAA templates</Title>
     <PackageId>Gaa.DotNet.Templates</PackageId>
-    <Description>Personal project templates.</Description>
     <PackageTags>GAA;Net;Templates;</PackageTags>
-    <Authors>Andrey G.</Authors>
-    <Company>None</Company>
-    <Copyright>Copyright 2023.</Copyright>
-    <NeutralLanguage>ru-RU</NeutralLanguage>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/g-aa/gaa-dotnet-templates</RepositoryUrl>
+    <PackageType>Template</PackageType>
     <PackageProjectUrl>https://github.com/g-aa/gaa-dotnet-templates</PackageProjectUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageVersion>1.4.1</PackageVersion>
-    <IncludeContentInPack>true</IncludeContentInPack>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageVersion>$(Build_Version)</PackageVersion>
+    <PackageReleaseNotes>Updating the project</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-    <ContentTargetFolders>content</ContentTargetFolders>
+    <IncludeContentInPack>true</IncludeContentInPack>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <NoDefaultExcludes>true</NoDefaultExcludes>
+    <ContentTargetFolders>content</ContentTargetFolders>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
-    <Compile Remove="**\*" />
+    <Content Include="content/**/*" Exclude="content/**/bin/**;content/**/obj/**" />
+    <Compile Remove="**/*" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
-    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" Visible="true" />
+    <None Include="../../icon.png" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE.txt" Pack="true" PackagePath="/" Visible="true" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="content\" />
+    <Folder Include="content/" />
   </ItemGroup>
 </Project>
