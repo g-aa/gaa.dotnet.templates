@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Andrey G.",
+  "classifications": [
+    "Common",
+    "Gaa",
+    "Project",
+    "Console"
+  ],
+  "name": "Gaa: Project Console",
+  "generatorVersions": "[1.0.0.0-*)",
+  "description": "Create a template console application for personal projects.",
+  "identity": "Gaa.Project.Console",
+  "shortName": [
+    "gaa-proj-console",
+    "gaa-project-console"
+  ],
+  "sourceName": "Gaa.Project.Console",
+  "defaultName": "Gaa.Project.Console1",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(HostIdentifier == \"dotnetcli\" ||  HostIdentifier == \"dotnetcli-preview\")"
+        }
+      ]
+    }
+  ],
+  "preferNameDirectory": true
+}

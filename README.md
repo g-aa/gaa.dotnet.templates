@@ -22,4 +22,5 @@ Gaa: Project Test       gaa-proj-test,gaa-project-test          [C#]        Comm
 Gaa: Project Service    gaa-proj-service,gaa-project-service    [C#]        Common/Gaa/Project/Service
 Gaa: Project Logic      gaa-proj-logic,gaa-project-logic        [C#]        Common/Gaa/Project/Logic
 Gaa: Project Library    gaa-proj-library,gaa-project-library    [C#]        Common/Gaa/Project/Library
+Gaa: Project Console    gaa-proj-console,gaa-project-console    [C#]        Common/Gaa/Project/Console
 ```
