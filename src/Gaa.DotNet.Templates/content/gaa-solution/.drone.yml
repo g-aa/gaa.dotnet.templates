@@ -1,0 +1,32 @@
+---
+kind: pipeline
+type: docker
+name: module
+
+environment:
+  V_CONFIGURATION: Release
+
+clone:
+  depth: 5
+
+steps:
+- name: build
+  image: local/dotnet/sdk:8.0.0
+  commands:
+  - dotnet restore
+  - dotnet build --configuration $V_CONFIGURATION
+
+- name: test
+  image: local/dotnet/sdk:8.0.0
+  commands:
+  - |
+    dotnet test --configuration $V_CONFIGURATION \
+      --settings coverlet.runsettings \
+      --test-adapter-path:. \
+      --logger:"junit;LogFilePath=../../results/{assembly}.TestResult.xml;MethodFormat=Class;FailureBodyFormat=Verbose" \
+      --results-directory results/coverage \
+      --filter "Category != Integration"
+    reportgenerator -reports:results/coverage/*/coverage.opencover.xml -targetdir:results/report -reportTypes:"TextSummary;Html"
+    cat results/report/Summary.txt
+  depends_on:
+  - build
