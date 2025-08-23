@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.6.0] - 2025-08-23
+
+### Изменено
+
+- Добавление `.drone.yml`.
+- Обновление файлов проекта.
+
 ## [1.5.0] - 2025-01-25
 
 ### Изменено
@@ -64,7 +71,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 - Добавление шаблона `Gaa: Empty Solution`.
 - Добавление шаблона `Gaa: Library Solution`.
 
-[Unreleased]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.5.0...master
+[Unreleased]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.6.0...master
+[1.6.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.5.0...release-v1.6.0
 [1.5.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.4.1...release-v1.5.0
 [1.4.1]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.4.0...release-v1.4.1
 [1.4.0]: https://github.com/g-aa/gaa-dotnet-templates/compare/release-v1.3.0...release-v1.4.0

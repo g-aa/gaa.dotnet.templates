@@ -19,11 +19,13 @@ _TeamCity.*
 
 # indexed
 !.dockerignore
+!.drone.yml
 !.editorconfig
+!.gitattributes
 !.gitignore
-!.mr-develop-to-master.bat
+!.globalconfig
+!.mr-dev-to-master.sh
 !.tag.sh
 !.template.config
-!.test.bat
 !.test.sh
 !.version

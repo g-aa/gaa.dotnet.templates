@@ -1,20 +1,29 @@
-# <p><img src="icon.png" width="64px" height="64px" align="middle"/> GAA dotnet templates</p>
+# GAA dotnet templates
 
-.Net шаблоны для личных проектов. 
-
-## [История изменения](CHANGELOG.md)
+DotNet шаблоны для личных проектов.
 
 ## [Примеры по созданию шаблонов](https://github.com/dotnet/dotnet-template-samples)
 
 ## Команды по работе с пакетом шаблонов
 
-- Просмотр актуального перечня шаблонов: `dotnet new list`
-- Установка пакета с шаблонами (пример): `dotnet new install Gaa.DotNet.Templates.1.0.0.nupkg`
-- Удаление пакета с шаблонами (пример):  `dotnet new uninstall Gaa.DotNet.Templates.1.0.0.nupkg`
+- Просмотр актуального перечня шаблонов
+  ```console
+  dotnet new list
+  ```
+
+- Установка пакета с шаблонами
+  ```console
+  dotnet new install Gaa.DotNet.Templates.1.0.0.nupkg
+  ```
+
+- Удаление пакета с шаблонами
+  ```console
+  dotnet new uninstall Gaa.DotNet.Templates.1.0.0.nupkg
+  ```
 
 ## Список доступных шаблонов
 
-```
+```console
 Templates               Short Name                              Language    Tags
 ------------------------------------------------------------------------------------------------------
 Gaa: Empty Solution     gaa-sln,gaa-solution                    [C#]        Common/Gaa/Solution

@@ -1,4 +1,5 @@
-@echo off
+#!/usr/bin/env bash
+
 git checkout master --
 git pull -v --progress "origin"
 git merge --ff-only remotes/origin/develop

@@ -36,7 +36,7 @@ resharper_use_roslyn_logic_for_evident_types = true
 [*.cs]
 csharp_style_pattern_local_over_anonymous_function = false
 
-[*.{yml,json,nuspec,proj,props,xml,html,config,ruleset,csproj,targets,runsettings}]
+[*.{yml,json,nuspec,proj,props,xml,html,hbs,config,ruleset,csproj,targets,runsettings}]
 indent_size = 2
 
 [*.{cshtml,ts,js,css}]

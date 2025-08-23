@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{B4E2D74B-EEAB-40CE-8C67-A12050DCFCD5}"
 	ProjectSection(SolutionItems) = preProject
+		.drone.yml = .drone.yml
 		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		.tag.sh = .tag.sh
 		.version = .version
@@ -14,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{B4E2D74B-E
 		icon.png = icon.png
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
+		TODO = TODO
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{84CDCB03-2819-44AB-898B-1FD03D4FAF26}"

@@ -12,12 +12,6 @@
     <FileVersion>$(Build_Number)</FileVersion>
     <AssemblyVersion>$(Build_Number)</AssemblyVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.5.0.109200">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
