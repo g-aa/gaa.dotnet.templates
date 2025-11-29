@@ -2,7 +2,6 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Andrey G.",
   "classifications": [
-    "Common",
     "Gaa",
     "Project",
     "Logic"
@@ -12,8 +11,7 @@
   "description": "Create a template logic project for personal projects.",
   "identity": "Gaa.Project.Logic",
   "shortName": [
-    "gaa-proj-logic",
-    "gaa-project-logic"
+    "gaa.project.logic"
   ],
   "sourceName": "Gaa.Project.Logic",
   "defaultName": "Gaa.Project.Logic1",

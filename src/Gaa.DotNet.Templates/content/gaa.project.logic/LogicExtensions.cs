@@ -2,18 +2,17 @@ using System.Diagnostics.CodeAnalysis;
 
 using FluentValidation;
 
-using Gaa.Project.Logic;
 using Gaa.Project.Logic.Validators;
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Gaa.Project.Service.Infrastructure;
+namespace Gaa.Project.Logic;
 
 /// <summary>
-/// Методы расширения для <see cref="IServiceCollection"/>.
+/// Методы расширения для <see cref="IServiceCollection" />.
 /// </summary>
 [ExcludeFromCodeCoverage]
-public static class LogicServiceCollectionExtensions
+public static class LogicExtensions
 {
     /// <summary>
     /// Добавляет компоненты логики в коллекцию сервисов.
