@@ -4,7 +4,7 @@ using System.Globalization;
 using Gaa.Project.Service.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 using Swashbuckle.AspNetCore.SwaggerGen;
 

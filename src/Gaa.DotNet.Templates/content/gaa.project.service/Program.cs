@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 
 using NLog;
-using NLog.Web;
+using NLog.Extensions.Logging;
 
 using System.Diagnostics.CodeAnalysis;
 
@@ -19,21 +19,21 @@ public static class Program
     /// <param name="args">Аргументы запуска приложения.</param>
     public static async Task Main(string[] args)
     {
-        var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+        var log = LogManager.Setup().LoadConfigurationFromFile().GetCurrentClassLogger();
 
         try
         {
-            logger.Debug("Сервис запущен на выполнение...");
+            log.Info("Сервис запущен на выполнение...");
             var host = CreateHostBuilder(args).Build();
             await host.RunAsync();
         }
         catch (Exception exception)
         {
-            logger.Error(exception, "Сервис остановлен из за перехвата не необработанного исключения!");
+            log.Error(exception, "Сервис остановлен из за перехвата не необработанного исключения!");
         }
         finally
         {
-            logger.Debug("Сервис остановлен.");
+            log.Info("Сервис остановлен.");
             LogManager.Shutdown();
         }
     }
@@ -47,12 +47,12 @@ public static class Program
     {
         return WebHost
             .CreateDefaultBuilder<Startup>(args)
-            .ConfigureLogging((context, logging) =>
+            .ConfigureLogging((_, logging) =>
             {
                 logging
                     .ClearProviders()
                     .SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace)
-                    .AddNLogWeb();
+                    .AddNLog();
             });
     }
 }

@@ -19,9 +19,6 @@ namespace Gaa.Project.Service;
 [ExcludeFromCodeCoverage]
 public sealed class Startup
 {
-    /// <inheritdoc cref="IConfiguration"/>
-    public IConfiguration Configuration { get; init; }
-
     /// <summary>
     /// Инициализирует новый экземпляр класса <see cref="Startup"/>.
     /// </summary>
@@ -30,6 +27,9 @@ public sealed class Startup
     {
         Configuration = configuration;
     }
+
+    /// <inheritdoc cref="IConfiguration" />
+    public IConfiguration Configuration { get; init; }
 
     /// <summary>
     /// Конфигурирует сервисы приложения.
@@ -86,6 +86,7 @@ public sealed class Startup
             .UseDiagnostics()
             .UseRouting()
             .UseAuthorization()
+            .UseSwaggerDocumentation()
             .UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -94,7 +95,6 @@ public sealed class Startup
                     context.Response.Redirect("/swagger");
                     return Task.CompletedTask;
                 });
-            })
-            .UseSwaggerDocumentation();
+            });
     }
 }

@@ -2,7 +2,6 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Andrey G.",
   "classifications": [
-    "Common",
     "Gaa",
     "Project",
     "Service"
@@ -12,8 +11,7 @@
   "description": "Create a template web service project for personal projects.",
   "identity": "Gaa.Project.Service",
   "shortName": [
-    "gaa-proj-service",
-    "gaa-project-service"
+    "gaa.project.service"
   ],
   "sourceName": "Gaa.Project.Service",
   "defaultName": "Gaa.Project.Service1",
