@@ -11,7 +11,7 @@
   "description": "Create a template console application for personal projects.",
   "identity": "Gaa.Project.Console",
   "shortName": [
-    "gaa-project-console"
+    "gaa.project.console"
   ],
   "sourceName": "Gaa.Project.Console",
   "defaultName": "Gaa.Project.Console1",

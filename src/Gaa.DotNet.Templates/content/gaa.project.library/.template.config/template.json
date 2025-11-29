@@ -2,7 +2,6 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Andrey G.",
   "classifications": [
-    "Common",
     "Gaa",
     "Project",
     "Library"
@@ -12,8 +11,7 @@
   "description": "Create a template library for personal projects.",
   "identity": "Gaa.Project.Library",
   "shortName": [
-    "gaa-proj-library",
-    "gaa-project-library"
+    "gaa.project.library"
   ],
   "sourceName": "Gaa.Project.Library",
   "defaultName": "Gaa.Project.Library1",
