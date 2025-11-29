@@ -2,7 +2,6 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Andrey G.",
   "classifications": [
-    "Common",
     "Gaa",
     "Project",
     "Test"
@@ -12,8 +11,7 @@
   "description": "Create a template test project for personal projects.",
   "identity": "Gaa.Project.Test",
   "shortName": [
-    "gaa-proj-test",
-    "gaa-project-test"
+    "gaa.project.test"
   ],
   "sourceName": "Gaa.Project.Test",
   "defaultName": "Gaa.Project.Test1",
