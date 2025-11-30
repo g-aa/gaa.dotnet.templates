@@ -10,21 +10,22 @@ DotNet шаблоны для личных проектов.
   ```console
   dotnet new list
 
-  Templates               Short Name           Language    Tags
-  ----------------------------------------------------------------------------
-  Gaa: Empty Solution     gaa.solution           [C#]      Gaa/Solution
-  Gaa: Project Test       gaa.project.test       [C#]      Gaa/Project/Test
-  Gaa: Project Service    gaa.project.service    [C#]      Gaa/Project/Service
-  Gaa: Project Logic      gaa.project.logic      [C#]      Gaa/Project/Logic
-  Gaa: Project Library    gaa.project.library    [C#]      Gaa/Project/Library
-  Gaa: Project Console    gaa.project.console    [C#]      Gaa/Project/Console
+  Templates                  Short Name                Language  Tags
+  -------------------------  ------------------------  --------  ------------------------
+  Gaa: Empty Solution        gaa.solution              [C#]      Gaa/Solution
+  Gaa: Project Console       gaa.project.console       [C#]      Gaa/Project/Console
+  Gaa: Project Library       gaa.project.library       [C#]      Gaa/Project/Library
+  Gaa: Project Logic         gaa.project.logic         [C#]      Gaa/Project/Logic
+  Gaa: Project Service       gaa.project.service       [C#]      Gaa/Project/Service
+  Gaa: Project Service gRPC  gaa.project.service.grpc  [C#]      Gaa/Project/Service/Grpc
+  Gaa: Project Test          gaa.project.test          [C#]      Gaa/Project/Test
   ```
 
 ## Команды по работе с пакетом шаблонов
 
 - Установка пакета с шаблонами
   ```console
-  dotnet new install Gaa.DotNet.Templates.1.0.0.nupkg
+  dotnet new install Gaa.DotNet.Templates.1.7.0.nupkg
   ```
 
 - Просмотреть перечень установленных пакетов с шаблонами
@@ -33,15 +34,18 @@ DotNet шаблоны для личных проектов.
 
   Установленные в настоящее время элементы:
    Gaa.DotNet.Templates
-      Версия: 1.0.0
+      Версия: 1.7.0
       Сведения:
          Author: Andrey G.
          Reserved: ✘
       Шаблоны:
-         Gaa: Empty Solution (gaa.solution) C#
          Gaa: Project Console (gaa.project.console) C#
          Gaa: Project Library (gaa.project.library) C#
+         Gaa: Project Logic (gaa.project.logic) C#
+         Gaa: Project Service gRPC (gaa.project.service.grpc) C#
+         Gaa: Project Service (gaa.project.service) C#
          Gaa: Project Test (gaa.project.test) C#
+         Gaa: Empty Solution (gaa.solution) C#
       Команда "Удалить":
          dotnet new uninstall Gaa.DotNet.Templates
   ```
