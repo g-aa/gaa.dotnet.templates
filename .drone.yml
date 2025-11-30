@@ -15,7 +15,12 @@ steps:
   commands:
   - |
     dotnet restore
-    dotnet pack --configuration $V_CONFIGURATION --no-build --output ./packages -p:IncludeSymbols=true -p:SymbolPackageFormat=symbols.nupkg
+    dotnet pack \
+      --configuration $V_CONFIGURATION \
+      --no-build \
+      --output ./packages \
+      -p:IncludeSymbols=true \
+      -p:SymbolPackageFormat=symbols.nupkg
 
 - name: publish
   image: local/dotnet/sdk:8.0.0

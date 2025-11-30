@@ -9,7 +9,7 @@
     <PackageId>Gaa.DotNet.Templates</PackageId>
     <PackageTags>GAA;Net;Templates;</PackageTags>
     <PackageType>Template</PackageType>
-    <PackageProjectUrl>https://github.com/g-aa/gaa-dotnet-templates</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/g-aa/gaa.dotnet.templates</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
