@@ -8,5 +8,5 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-  <Import Project="..\..\build\Version.targets" />
+  <Import Project="../../build/Version.targets" />
 </Project>

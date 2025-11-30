@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "Gaa.Project.Service.Grpc";
+
+package v1;
+
+// Пример сервиса.
+service Example {
+
+  // Отправляет запрос в сервис.
+  rpc Send(RequestMessage) returns (ResponseMessage);
+}
+
+// Запрос.
+message RequestMessage {
+
+  // Текст сообщения.
+  string text = 1;
+}
+
+// Ответ.
+message ResponseMessage {
+
+  // Текст сообщение.
+  string text = 1;
+}

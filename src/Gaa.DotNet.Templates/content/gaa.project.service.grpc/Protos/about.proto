@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Gaa.Project.Service.Grpc";
+
+// Сервис с информацией о приложении.
+service About {
+
+  // Предоставляет информацию о версии приложения.
+  rpc Version(google.protobuf.Empty) returns (VersionResponse);
+}
+
+// Ответ, содержащий информацию о версии приложения.
+message VersionResponse {
+
+  // Версия приложения.
+  string version = 1;
+
+  // Версия файла приложения.
+  string file_version = 2;
+
+  // Версия продукта.
+  string product_version = 3;
+}

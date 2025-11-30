@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/ru/1.0.0/) a
 
 ## [1.7.0] - 2025-11-29
 
+### Добавлено
+
+- Добавление шаблона `Gaa: Project Service gRPC`.
+
 ### Изменено
 
 - Обновление шаблона `Gaa: Project Console`.
