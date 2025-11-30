@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Authors>Andrey G.</Authors>
     <Company>None</Company>
-    <Copyright>Copyright GAA $([System.DateTimeOffset]::UtcNow.ToString(yyyy)).</Copyright>
+    <Copyright>© Copyright GAA $([System.DateTimeOffset]::UtcNow.ToString(yyyy)).</Copyright>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/g-aa</RepositoryUrl>
     <Build_Version Condition=" '$(Build_Version)' == '' ">$([System.IO.File]::ReadAllText($(MSBuildThisFileDirectory).version).Trim())</Build_Version>

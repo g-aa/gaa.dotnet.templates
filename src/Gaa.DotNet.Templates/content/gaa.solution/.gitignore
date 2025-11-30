@@ -24,7 +24,7 @@ _TeamCity.*
 !.gitattributes
 !.gitignore
 !.globalconfig
-!.mr-dev-to-master.sh
+!.mr.dev.to.master.sh
 !.tag.sh
 !.template.config
 !.test.sh

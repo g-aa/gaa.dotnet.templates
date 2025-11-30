@@ -2,7 +2,6 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Andrey G.",
   "classifications": [
-    "Common",
     "Gaa",
     "Solution"
   ],
@@ -12,8 +11,7 @@
   "groupIdentity": "GaaSolution",
   "identity": "Gaa.Solution",
   "shortName": [
-    "gaa-sln",
-    "gaa-solution"
+    "gaa.solution"
   ],
   "sourceName": "Gaa.Solution",
   "defaultName": "Gaa.Solution1",
