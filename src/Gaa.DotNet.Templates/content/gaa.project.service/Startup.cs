@@ -17,34 +17,23 @@ namespace Gaa.Project.Service;
 /// Класс инициализирующий приложение.
 /// </summary>
 [ExcludeFromCodeCoverage]
-public sealed class Startup
+public static class Startup
 {
-    /// <summary>
-    /// Инициализирует новый экземпляр класса <see cref="Startup"/>.
-    /// </summary>
-    /// <param name="configuration">Набор свойств конфигурации приложения.</param>
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
-
-    /// <inheritdoc cref="IConfiguration" />
-    public IConfiguration Configuration { get; init; }
-
     /// <summary>
     /// Конфигурирует сервисы приложения.
     /// </summary>
     /// <param name="services">Коллекция сервисов.</param>
-    public void ConfigureServices(IServiceCollection services)
+    /// <param name="configuration">Набор свойств конфигурации приложения.</param>
+    public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
         services
             .AddScoped<ServiceUser>()
             .AddHttpContextAccessor()
             .AddApiVersioningSupport()
             .AddSwaggerDocumentation()
-            .AddScheduler(Configuration);
+            .AddScheduler(configuration);
 
-        var uriBuilder = new UriBuilder(Configuration.GetConnectionString("RabbitMQ")!);
+        var uriBuilder = new UriBuilder(configuration.GetConnectionString("RabbitMQ")!);
         services.AddMassTransit(configure =>
         {
             configure.AddConsumer<SampleConsumer>();
@@ -80,7 +69,7 @@ public sealed class Startup
     /// </summary>
     /// <param name="builder">Строитель приложения.</param>
     /// <param name="environment">Окружение приложения.</param>
-    public void Configure(IApplicationBuilder builder, IWebHostEnvironment environment)
+    public static void Configure(IApplicationBuilder builder, IWebHostEnvironment environment)
     {
         builder
             .UseDiagnostics()

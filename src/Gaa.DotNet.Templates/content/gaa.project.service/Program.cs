@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore;
-
 using NLog;
 using NLog.Extensions.Logging;
 
@@ -24,35 +22,24 @@ public static class Program
         try
         {
             log.Info("Сервис запущен на выполнение...");
-            var host = CreateHostBuilder(args).Build();
+
+            var builder = WebApplication.CreateBuilder(args);
+            builder.Logging.ClearProviders().SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace).AddNLog();
+            Startup.ConfigureServices(builder.Services, builder.Configuration);
+
+            var host = builder.Build();
+            Startup.Configure(host, host.Environment);
+
             await host.RunAsync();
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-            log.Error(exception, "Сервис остановлен из за перехвата не необработанного исключения!");
+            log.Error(ex, "Сервис остановлен из за перехвата не необработанного исключения!");
         }
         finally
         {
             log.Info("Сервис остановлен.");
             LogManager.Shutdown();
         }
-    }
-
-    /// <summary>
-    /// Инициализация приложения.
-    /// </summary>
-    /// <param name="args">Аргументы запуска приложения.</param>
-    /// <returns>Строитель приложения.</returns>
-    public static IWebHostBuilder CreateHostBuilder(string[] args)
-    {
-        return WebHost
-            .CreateDefaultBuilder<Startup>(args)
-            .ConfigureLogging((_, logging) =>
-            {
-                logging
-                    .ClearProviders()
-                    .SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace)
-                    .AddNLog();
-            });
     }
 }
